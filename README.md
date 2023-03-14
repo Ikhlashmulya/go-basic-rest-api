@@ -2,12 +2,12 @@
 My pratices build rest api using Go-Lang
 
 ## how to install
-"""
+```
 git clone https://github.com/ikhlashmulya/go-basic-rest-api.git
 cd go-basic-rest-api
 go mod tidy
 go run server.go
-"""
+```
 
 ## endpoint
 [http://localhost:8080/api/students](http://localhost:8080/api/students)
@@ -20,10 +20,10 @@ go run server.go
 * method `DELETE` : delete data student
 
 ## JSON
-"""
+```
 {
 	"id" : "string", 
 	"name" : "string", 
 	"email" : "string" 
 } 
-"""
+```
