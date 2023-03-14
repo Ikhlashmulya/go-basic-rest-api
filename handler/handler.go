@@ -38,7 +38,25 @@ func SaveStudent(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 	}
 
 	database.Save(*student)
-	w.Header().Add("Location", r.URL.Path)
+	w.Header().Add("Location", r.URL.Path+"/"+student.Id)
+}
+
+func GetStudent(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
+	id := p.ByName("id")
+
+	student, ok := database.FindById(id)
+	if !ok {
+		http.NotFound(w, r)
+		return
+	}
+
+	bytes, err := json.Marshal(&student)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	JsonResponse(w, bytes)
 }
 
 func JsonResponse(w http.ResponseWriter, bytes []byte) {

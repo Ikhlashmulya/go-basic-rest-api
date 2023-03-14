@@ -22,3 +22,9 @@ func FindAll() []model.Student {
 func Save(data model.Student) {
 	database[data.Id] = data
 }
+
+func FindById(id string) (model.Student, bool) {
+	student, ok := database[id]
+
+	return student, ok
+}
