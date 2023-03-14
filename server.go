@@ -12,12 +12,12 @@ func main() {
 
 	//router
 	router := httprouter.New()
-	router.GET("/students", handler.GetStudents)
-	router.POST("/students", handler.SaveStudent)
+	router.GET("/api/students", handler.GetStudents)
+	router.POST("/api/students", handler.SaveStudent)
 
-	router.GET("/students/:id", handler.GetStudent)
-	router.PUT("/students/:id", handler.UpdateStudent)
-	router.DELETE("/students/:id", handler.DeleteStudent)
+	router.GET("/api/students/:id", handler.GetStudent)
+	router.PUT("/api/students/:id", handler.UpdateStudent)
+	router.DELETE("/api/students/:id", handler.DeleteStudent)
 
 	//server
 	server := http.Server{
