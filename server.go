@@ -16,6 +16,9 @@ func main() {
 	router.POST("/students", handler.SaveStudent)
 
 	router.GET("/students/:id", handler.GetStudent)
+	router.PUT("/students/:id", handler.UpdateStudent)
+	router.DELETE("/students/:id", handler.DeleteStudent)
+
 	//server
 	server := http.Server{
 		Addr:    ":8080",

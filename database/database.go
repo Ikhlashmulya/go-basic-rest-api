@@ -19,12 +19,16 @@ func FindAll() []model.Student {
 	return items
 }
 
-func Save(data model.Student) {
-	database[data.Id] = data
+func Save(key string, data model.Student) {
+	database[key] = data
 }
 
 func FindById(id string) (model.Student, bool) {
 	student, ok := database[id]
 
 	return student, ok
+}
+
+func Remove(id string) {
+	delete(database, id)
 }
