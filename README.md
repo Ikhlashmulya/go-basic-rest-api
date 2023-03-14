@@ -12,7 +12,7 @@ go run server.go
 
 ## endpoint
 [http://localhost:8080/api/students](http://localhost:8080/api/students)
-* method `GET` : get list all of students
+* method `GET` : get list of students
 * method `POST` : add new data student
 
 [http://localhost:8080/api/students/{id}](http://localhost:8080/api/students/{id})
