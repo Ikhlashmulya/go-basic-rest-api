@@ -13,6 +13,7 @@ func main() {
 	//router
 	router := httprouter.New()
 	router.GET("/students", handler.GetStudents)
+	router.POST("/students", handler.SaveStudent)
 
 	//server
 	server := http.Server{

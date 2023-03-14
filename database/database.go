@@ -2,9 +2,7 @@ package database
 
 import "github.com/ikhlashmulya/go-basic-rest-api/model"
 
-var (
-	database = make(map[string]model.Student)
-)
+var database = make(map[string]model.Student)
 
 func FindAll() []model.Student {
 	database["01"] = model.Student{
@@ -19,4 +17,8 @@ func FindAll() []model.Student {
 	}
 
 	return items
+}
+
+func Save(data model.Student) {
+	database[data.Id] = data
 }
