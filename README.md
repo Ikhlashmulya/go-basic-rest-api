@@ -1,5 +1,6 @@
 # go-basic-rest-api
 My pratices build rest api using Go-Lang
+reference : [https://github.com/kkamdooong/go-restful-api-example](https://github.com/kkamdooong/go-restful-api-example)
 
 ## how to install
 ```
@@ -20,10 +21,10 @@ go run server.go
 * method `DELETE` : delete data student
 
 ## JSON
-```
+```json
 {
-	"id" : "string", 
-	"name" : "string", 
-	"email" : "string" 
+    "id" : "string", 
+    "name" : "string", 
+    "email" : "string" 
 } 
 ```
