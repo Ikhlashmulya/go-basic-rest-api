@@ -38,7 +38,7 @@ func SaveStudent(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 	}
 
 	database.Save(student.Id, *student)
-	w.Header().Add("Location", r.URL.Path+"/api/"+student.Id)
+	w.Header().Add("Location", r.URL.Path+"/"+student.Id)
 }
 
 func GetStudent(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
@@ -74,7 +74,7 @@ func UpdateStudent(w http.ResponseWriter, r *http.Request, p httprouter.Params) 
 	}
 
 	database.Save(p.ByName("id"), *student)
-	w.Header().Add("Location", r.URL.Path+"/api/"+student.Id)
+	w.Header().Add("Location", r.URL.Path+"/"+student.Id)
 
 }
 
@@ -82,11 +82,10 @@ func DeleteStudent(w http.ResponseWriter, r *http.Request, p httprouter.Params) 
 	id := p.ByName("id")
 
 	database.Remove(id)
-	w.Header().Add("Location", "/api/students")
+	w.Header().Add("Location", "/students")
 }
 
 func JsonResponse(w http.ResponseWriter, bytes []byte) {
-	w.Header().Set("content-type", "application/json; charset=UTF-8")
-	w.Header().Set("Accept", "application/json")
+	w.Header().Set("content-type", "application/json")
 	w.Write(bytes)
 }
